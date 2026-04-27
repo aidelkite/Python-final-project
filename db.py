@@ -1,7 +1,7 @@
 import sqlite3
 
 
-class db:
+class DataBase:
     def __init__(self):
         self.conn = sqlite3.connect("rabbis.db")
         self.cur = self.conn.cursor()
@@ -17,4 +17,3 @@ class db:
             self.cur.execute(
                 "INSERT INTO rabbis (name, link) VALUES (?, ?)", (name, link))
         self.conn.commit()
-        self.conn.close()
